@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Setup</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="/Week8/Project 1/assets/css/custom.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="w-full h-full p-0 m-0 overflow-x-hidden">
+    <!-- *Navbar and Hero Section -->
+    <header
+      id="home"
+      class="relative w-full bg-center h-[730px] bg-no-repeat bg-cover bg-[url('./assets/images/hero-man.jpg')]">
+      <div class="container mx-auto px-[250px]">
+        <nav
+          id="navbar"
+          class="flex items-center justify-between transition-all duration-300">
+          <!-- Logo -->
+          <div>
+            <img src="./assets/images/logo.png" alt="Logo" />
+          </div>
+          <!-- Navbar -->
+          <ul class="flex gap-6 text-xl font-extrabold text-white">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#trainers">Trainers</a></li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a
+                href="#join"
+                class="px-4 py-2 rounded bg-amber-500 hover:bg-amber-600"
+                >JOIN US</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="mt-16 text-white">
+          <span
+            class="px-4 py-1 text-2xl font-bold bg-[#325492] rounded text-shadow-lg"
+            >POWERFULL</span
+          >
+          <h1 class="mt-4 text-6xl font-bold leading-tight md:text-8xl">
+            Group <br />
+            Practice <br />
+            With Trainer
+          </h1>
+          <p class="p-4 mt-4 text-2xl font-bold leading-relaxed bg-black/50">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus, odit aut iste. Voluptates, vero id. Perferendis.
+            Consectetur, adipisicing elit. Sed.
+          </p>
+          <div class="flex gap-4 mt-6 ml-5">
+            <a
+              href="#signup"
+              class="px-6 py-2 text-xl font-semibold text-white bg-[#325492] rounded-md hover:scale-105 transition-transform duration-300"
+              >Sign Up</a
+            >
+            <a
+              href="#details"
+              class="px-6 py-2 text-xl font-bold text-white border border-white rounded-md hover:bg-white hover:text-black"
+              >Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- *Stat Bölümü -->
+    <div class="pt-8 mt-0 h-52 bg-blue-50">
+      <div
+        class="container grid grid-cols-4 gap-4 px-[250px] mx-auto text-center">
+        <!-- Stat 1 -->
+        <div class="p-6 bg-white rounded-md shadow-md">
+          <h3 class="text-4xl font-extrabold text-[#325492]">325</h3>
+          <p class="font-bold text-black">Course</p>
+        </div>
+        <!-- Stat 2 -->
+        <div class="p-6 bg-white rounded-md shadow-md">
+          <h3 class="text-4xl font-bold text-[#325492]">405</h3>
+          <p class="font-bold text-black">Work Out</p>
+        </div>
+        <!-- Stat 3 -->
+        <div class="p-6 bg-white rounded-md shadow-md">
+          <h3 class="text-4xl font-bold text-[#325492]">305</h3>
+          <p class="font-bold text-black">Working Hour</p>
+        </div>
+        <!-- Stat 4 -->
+        <div class="p-6 bg-white rounded-md shadow-md">
+          <h3 class="text-4xl font-bold text-[#325492]">705</h3>
+          <p class="font-bold text-balck">Happy Client</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- *Our Classes Section -->
+    <section id="classes" class="px-[250px] bg-gray-50">
+      <div class="container px-6 py-16 mx-auto text-center">
+        <!-- Başlık -->
+        <h2 class="text-4xl font-extrabold text-[#325492]">OUR CLASSES</h2>
+        <div class="w-16 h-1 mx-auto mt-2 mb-8 bg-amber-400"></div>
+        <p class="max-w-2xl mx-auto mb-8 text-black">
+          Lorem Ipsum is not simply random text. It has roots in a piece of
+          classical at Hampden-Sydney College.
+        </p>
+
+        <!-- Butonlar -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button
+            class="px-6 py-2 font-bold text-white rounded-md shadow-md bg-amber-400 hover:bg-amber-500">
+            Yoga
+          </button>
+          <button
+            class="px-6 py-2 bg-[#325492] text-white font-bold rounded-md shadow-md hover:bg-[#273c73]">
+            Group
+          </button>
+          <button
+            class="px-6 py-2 bg-[#325492] text-white font-bold rounded-md shadow-md hover:bg-[#273c73]">
+            Solo
+          </button>
+          <button
+            class="px-6 py-2 bg-[#325492] text-white font-bold rounded-md shadow-md hover:bg-[#273c73]">
+            Stretching
+          </button>
+        </div>
+
+        <!-- İçerik -->
+        <div
+          class="container grid items-center grid-cols-1 gap-8 md:grid-cols-2">
+          <!-- Metin Kısmı -->
+          <div>
+            <h3 class="mb-4 text-2xl font-bold">Why are your Yoga?</h3>
+            <p class="mb-4 text-gray-600">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+              possimus voluptatum impedit odit perferendis dolorum placeat,
+              exercitationem in officia autem maiores ab nostrum laboriosam
+              sapiente nulla totam neque eum veniam.
+            </p>
+            <h4 class="mb-2 text-xl font-semibold">
+              When comes Yoga Your Time.
+            </h4>
+            <ul class="space-y-1 text-gray-600">
+              <li><strong>Saturday–Sunday:</strong> 8:00am – 10:00am</li>
+              <li><strong>Monday–Tuesday:</strong> 10:00am – 12:00pm</li>
+              <li><strong>Wednesday–Friday:</strong> 3:00pm – 6:00pm</li>
+            </ul>
+          </div>
+
+          <!-- Görsel Kısmı -->
+          <div>
+            <img
+              src="./assets/images/yoga.jpg"
+              alt="Yoga Class"
+              class="w-full rounded-md shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- *BMI Calculator Section -->
+    <section id="bmi" class="py-16 text-center bg-white">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-[#325492]">BMI Calculator</h2>
+        <p class="max-w-2xl mx-auto mt-4 text-gray-600">
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC.
+        </p>
+        <div class="flex flex-col justify-center gap-4 mt-8 md:flex-row">
+          <input
+            type="number"
+            id="height"
+            placeholder="Height (cm)"
+            class="w-64 px-4 py-2 border rounded-md" />
+          <input
+            type="number"
+            id="weight"
+            placeholder="Weight (kg)"
+            class="w-64 px-4 py-2 border rounded-md" />
+          <button
+            onclick="calculateBMI()"
+            class="px-6 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">
+            Calculate
+          </button>
+        </div>
+        <p id="bmi-result" class="mt-4 text-lg font-bold text-gray-800"></p>
+      </div>
+    </section>
+
+    <!-- *Our Best Trainers Section -->
+    <section id="trainers" class="py-16 text-center bg-blue-50">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-[#325492]">OUR BEST TRAINERS</h2>
+        <p class="mt-4 mb-8 text-gray-600">
+          Meet our professional trainers who will guide you to achieve your
+          goals.
+        </p>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div
+            class="p-4 transition bg-white rounded-md shadow-md hover:shadow-lg">
+            <img src="trainer1.jpg" alt="Trainer 1" class="w-full rounded-md" />
+            <h3 class="mt-4 text-xl font-bold">Trainer Name 1</h3>
+          </div>
+          <div
+            class="p-4 transition bg-white rounded-md shadow-md hover:shadow-lg">
+            <img src="trainer2.jpg" alt="Trainer 2" class="w-full rounded-md" />
+            <h3 class="mt-4 text-xl font-bold">Trainer Name 2</h3>
+          </div>
+          <div
+            class="p-4 transition bg-white rounded-md shadow-md hover:shadow-lg">
+            <img src="trainer3.jpg" alt="Trainer 3" class="w-full rounded-md" />
+            <h3 class="mt-4 text-xl font-bold">Trainer Name 3</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- *Purchase From Us Section -->
+    <section id="purchase" class="py-16 text-center bg-white">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-[#325492]">PURCHASE FROM US</h2>
+        <p class="mt-4 mb-8 text-gray-600">
+          Explore our products and start your fitness journey today.
+        </p>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+          <div class="p-4 bg-white rounded-md shadow-md">
+            <img src="product1.jpg" alt="Product 1" class="w-full rounded-md" />
+            <h3 class="mt-4 font-bold">Kettlebell | 5kg</h3>
+          </div>
+          <div class="p-4 bg-white rounded-md shadow-md">
+            <img src="product2.jpg" alt="Product 2" class="w-full rounded-md" />
+            <h3 class="mt-4 font-bold">Treadmill</h3>
+          </div>
+          <div class="p-4 bg-white rounded-md shadow-md">
+            <img src="product3.jpg" alt="Product 3" class="w-full rounded-md" />
+            <h3 class="mt-4 font-bold">Adjustable Dumbbell</h3>
+          </div>
+          <div class="p-4 bg-white rounded-md shadow-md">
+            <img src="product4.jpg" alt="Product 4" class="w-full rounded-md" />
+            <h3 class="mt-4 font-bold">Kettlebell | 3kg</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- *Review Client Section -->
+    <section id="review" class="py-16 text-center bg-blue-50">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-[#325492]">REVIEW CLIENT</h2>
+        <p class="mt-4 mb-8 text-gray-600">
+          Hear what our satisfied clients have to say.
+        </p>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="p-4 bg-white rounded-md shadow-md">
+            <p class="text-gray-600">"Great service and excellent trainers!"</p>
+            <h3 class="mt-2 font-bold">John Doe</h3>
+          </div>
+          <div class="p-4 bg-white rounded-md shadow-md">
+            <p class="text-gray-600">"Best fitness experience ever!"</p>
+            <h3 class="mt-2 font-bold">Jane Doe</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- *Contact Us Section -->
+    <section id="contact" class="py-16 text-center bg-white">
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-[#325492]">CONTACT US</h2>
+        <p class="mt-4 mb-8 text-gray-600">
+          Reach out to us for any inquiries or assistance.
+        </p>
+        <form class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="px-4 py-2 border rounded-md" />
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="px-4 py-2 border rounded-md" />
+          <textarea
+            placeholder="Your Message"
+            class="px-4 py-2 border rounded-md md:col-span-2"></textarea>
+          <button
+            type="submit"
+            class="px-6 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 md:col-span-2">
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- *Footer Section -->
+    <footer class="bg-[#325492] text-white py-12">
+      <div
+        class="container grid grid-cols-1 gap-8 px-6 mx-auto text-center md:grid-cols-3 md:text-left">
+        <!-- Logo ve Hakkımızda -->
+        <div>
+          <h3 class="mb-4 text-2xl font-bold">POWERFULL</h3>
+          <p class="text-sm text-gray-300">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisquam
+            voluptatum voluptas doloremque.
+          </p>
+        </div>
+
+        <!-- Bilgi Linkleri -->
+        <div>
+          <h4 class="mb-4 text-lg font-bold">Information</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#about" class="hover:text-amber-400">About Us</a></li>
+            <li><a href="#classes" class="hover:text-amber-400">Classes</a></li>
+            <li><a href="#blog" class="hover:text-amber-400">Blog</a></li>
+            <li><a href="#contact" class="hover:text-amber-400">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Yardımcı Linkler -->
+        <div>
+          <h4 class="mb-4 text-lg font-bold">Helpful Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#services" class="hover:text-amber-400">Services</a>
+            </li>
+            <li><a href="#support" class="hover:text-amber-400">Support</a></li>
+            <li>
+              <a href="#terms" class="hover:text-amber-400"
+                >Terms & Conditions</a
+              >
+            </li>
+            <li>
+              <a href="#privacy" class="hover:text-amber-400">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Alt Kısım -->
+      <div
+        class="pt-4 mt-8 text-sm text-center text-gray-300 border-t border-gray-600">
+        &copy; 2024 POWERFULL. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

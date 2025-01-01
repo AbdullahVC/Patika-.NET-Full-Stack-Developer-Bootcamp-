@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!-- Tailwin CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Espressolab</title>
+  </head>
+  <body style="background-color: black">
+    <header
+      x-data="{ menuitems: [
+        { href: '#slider', text: 'ANASAYFA' },
+        { href: '#about', text: 'ESPRESSOLAB' },
+        { href: '#menu', text: 'MENÜ' },
+        { href: '#references', text: 'BAHSETMELER' },
+        { href: '#contact', text: 'İLETİŞİM' },
+        ]}"
+      class="absolute w-full z-50 top-0">
+      <div class="container mx-auto py-4 flex flex-row items-center">
+        <a href="">
+          <img
+            src="/Practices/01/assets/img/espressolab.png"
+            alt="Espressolab"
+            class="lg:w-[170px]" />
+        </a>
+        <nav
+          class="flex items-center justify-center gap-6 pl-6 ml-6 border-l border-gray-200 text-base">
+          <template x-for="(menuitem, index) in menuitems" :key="index">
+            <a
+              :href="menuitem.href"
+              x-text="menuitem.text"
+              class="font-medium text-white hover:underline"></a>
+          </template>
+        </nav>
+        <div class="ml-auto">
+          <a
+            href=""
+            class="px-4 py-2 text-sm font-semibold text-white bg-red-600 rounded shadow"
+            >REZERVASYON YAP</a
+          >
+        </div>
+      </div>
+    </header>
+    <div
+      id="slider"
+      x-data="slider"
+      class="relative w-full h-screen overflow-hidden bg-black">
+      <template x-for="(slide, index) in slides ">
+        <figure x-show="currentIndex === index">
+          <img x-bind:src="slide" class="absolute z-0 size-full object-cover" />
+        </figure>
+      </template>
+      <button
+        x-on:click="back()"
+        class="absolute left-14 top-1/2 -translate-y-1/2 size-11 z-10 rounded-full shadow-md bg-gray-100 hover:bg-gray-200">
+        <svg
+          class="size-8 text-gray-500 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <button
+        x-on:click="next()"
+        class="absolute right-14 top-1/2 -translate-y-1/2 size-11 z-10 rounded-full shadow-md bg-gray-100 hover:bg-gray-200">
+        <svg
+          class="size-8 text-gray-500 mx-auto"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- JS -->
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("slider", () => ({
+          slides: [
+            "/Practices/01/assets/img/slide-1.jpeg",
+            "/Practices/01/assets/img/slide-2.jpeg",
+            "/Practices/01/assets/img/slide-3.jpeg",
+          ],
+          currentIndex: 0,
+          back() {
+            if (this.currentIndex > 0) {
+              this.currentIndex = this.currentIndex - 1;
+            } else {
+              this.currentIndex = this.slides.length - 1;
+            }
+          },
+          next() {
+            if (this.currentIndex < this.slides.length - 1) {
+              this.currentIndex = this.currentIndex + 1;
+            } else {
+              this.currentIndex = 0;
+            }
+          },
+        }));
+      });
+    </script>
+  </body>
+</html>

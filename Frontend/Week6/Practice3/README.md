@@ -26,7 +26,7 @@ Projenin canlı versiyonuna [buradan](https://marvelous-chebakia-d1c6af.netlify.
 
 ## Ekran Görüntüsü
 
-![Chuck Norris Jokes App](screenshot.png)
+![Chuck Norris Jokes App](image.png)
 
 ## API
 

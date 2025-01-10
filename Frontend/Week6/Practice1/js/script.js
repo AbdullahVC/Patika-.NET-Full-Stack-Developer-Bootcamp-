@@ -1,86 +1,102 @@
-// Sayfa yüklendiğinde mevcut öğelere event listener ekle
-document.addEventListener("DOMContentLoaded", () => {
-    loadTasksFromLocalStorage();
-    addEventListenersToItems();
-  });
-  
-  // Yeni öğe ekleme fonksiyonu
-  function newElement() {
-    const taskInput = document.getElementById("task");
-    const taskValue = taskInput.value.trim();
-    const list = document.getElementById("list");
-  
-    if (taskValue === "") {
-      showToast('errorToast');
-      return;
-    }
-  
-    // Yeni liste öğesi oluştur
+function newElement() {
+  const inputValue = document.getElementById("task").value;
+  if (inputValue === "") {
+    const errorToast = document.querySelector(".toast.error");
+    $(errorToast).toast("show");
+  } else {
     const li = document.createElement("li");
-    li.className = "list-group-item";
-    li.innerText = taskValue;
-  
-    // Silme butonu ekle
-    const span = document.createElement("span");
-    span.innerText = "×";
-    span.className = "close float-end";
-    span.onclick = () => {
-      li.remove();
-      saveToLocalStorage();
+    li.textContent = inputValue;
+    document.getElementById("list").appendChild(li);
+
+    const successToast = document.querySelector(".toast.success");
+    $(successToast).toast("show");
+
+    document.getElementById("task").value = "";
+
+    const closeButton = document.createElement("span");
+    closeButton.className = "close";
+    closeButton.innerHTML = "&times;";
+    li.appendChild(closeButton);
+
+    closeButton.onclick = function () {
+      const parentLi = this.parentElement;
+      parentLi.style.display = "none";
+      updateLocalStorage();
     };
-  
-    li.appendChild(span);
-    li.onclick = toggleChecked;
-  
-    list.appendChild(li);
-    taskInput.value = "";
-    showToast('successToast');
-    saveToLocalStorage();
+
+    updateLocalStorage();
   }
-  
-  // Yapıldı işaretleme fonksiyonu
-  function toggleChecked() {
-    this.classList.toggle("checked");
-    saveToLocalStorage();
+}
+
+document.getElementById("list").addEventListener("click", function (e) {
+  if (e.target && e.target.tagName === "LI") {
+    e.target.classList.toggle("checked");
   }
-  
-  // Local Storage'a kaydet
-  function saveToLocalStorage() {
-    localStorage.setItem("tasks", document.getElementById("list").innerHTML);
-  }
-  
-  // Local Storage'dan görevleri yükle
-  function loadTasksFromLocalStorage() {
-    const tasks = localStorage.getItem("tasks");
-    if (tasks) {
-      document.getElementById("list").innerHTML = tasks;
+});
+
+document.querySelectorAll("ul#list li").forEach((li) => {
+  li.innerHTML += `<span class="close">&times;</span>`;
+  li.querySelector(".close").onclick = () => (li.style.display = "none");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const listElement = document.getElementById("list");
+  listElement.innerHTML = "";
+  const storedList = JSON.parse(localStorage.getItem("taskList")) || [];
+  storedList.forEach((task) => {
+    const li = document.createElement("li");
+    li.textContent = task;
+    document.getElementById("list").appendChild(li);
+
+    const closeButton = document.createElement("span");
+    closeButton.className = "close";
+    closeButton.innerHTML = "&times;";
+    li.appendChild(closeButton);
+
+    closeButton.onclick = function () {
+      const parentLi = this.parentElement;
+      parentLi.style.display = "none";
+      updateLocalStorage();
+    };
+  });
+});
+
+function updateLocalStorage() {
+  const tasks = [];
+  document.querySelectorAll("ul#list li").forEach((li) => {
+    if (li.style.display !== "none") {
+      tasks.push(li.textContent.replace("\u00D7", "").trim());
     }
+  });
+  localStorage.setItem("taskList", JSON.stringify(tasks));
+}
+
+function newElement() {
+  const inputValue = document.getElementById("task").value;
+  if (inputValue === "") {
+    const errorToast = document.querySelector(".toast.error");
+    $(errorToast).toast("show");
+  } else {
+    const li = document.createElement("li");
+    li.textContent = inputValue;
+    document.getElementById("list").appendChild(li);
+
+    const successToast = document.querySelector(".toast.success");
+    $(successToast).toast("show");
+
+    document.getElementById("task").value = "";
+
+    const closeButton = document.createElement("span");
+    closeButton.className = "close";
+    closeButton.innerHTML = "&times;";
+    li.appendChild(closeButton);
+
+    closeButton.onclick = function () {
+      const parentLi = this.parentElement;
+      parentLi.style.display = "none";
+      updateLocalStorage();
+    };
+
+    updateLocalStorage();
   }
-  
-  // Mevcut öğelere olay dinleyici ekle
-  function addEventListenersToItems() {
-    document.querySelectorAll("#list li").forEach((li) => {
-      // Yapıldı olarak işaretleme
-      li.onclick = toggleChecked;
-  
-      // Silme butonu ekleme (eğer yoksa)
-      if (!li.querySelector(".close")) {
-        const span = document.createElement("span");
-        span.innerText = "×";
-        span.className = "close float-end";
-        span.onclick = (event) => {
-          event.stopPropagation(); // Yapıldı özelliğiyle çakışmayı önle
-          li.remove();
-          saveToLocalStorage();
-        };
-        li.appendChild(span);
-      }
-    });
-  }
-  
-  // Toast bildirimleri gösterme
-  function showToast(id) {
-    const toast = new bootstrap.Toast(document.getElementById(id));
-    toast.show();
-  }
-  
+}

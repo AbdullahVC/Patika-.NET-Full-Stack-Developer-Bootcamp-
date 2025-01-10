@@ -5,11 +5,11 @@ function getAPI() {
   fetch("https://api.chucknorris.io/jokes/random")
     .then((Response) => Response.json())
     .then((data) => {
-      document.getElementById("joke").textContent = data.value;
+      document.getElementById("notLoad").textContent = data.value;
     })
     .catch((error) => {
       console.error("the joke not displayed:", error);
-      document.getElementById("joke").textContent =
+      document.getElementById("notLoad").textContent =
         "The joke failed to load, please try again.";
     });
 }

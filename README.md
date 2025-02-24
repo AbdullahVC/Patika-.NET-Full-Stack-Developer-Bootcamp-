@@ -1,4 +1,4 @@
-# 📂 Patika+ Frontend
+# 📂 Patika+.NET-Full-Stack-Developer-Bootcamp 
 
 Bu proje, **Patika+ Frontend** eğitim sürecindeki haftaları ve her hafta içerisinde bulunan pratikleri düzenli bir şekilde görüntülemek için hazırlanmıştır.
 

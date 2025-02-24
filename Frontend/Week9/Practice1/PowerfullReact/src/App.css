@@ -1,0 +1,66 @@
+/* Colors*/
+:root {
+  /* Text Colors */
+  --text-white: #fefefe;
+  --text-grey: #4e4e4e;
+  --text-black: #000;
+  --text-blue: #355592;
+  /* Background Colors */
+  --bg-blue: #355592;
+  --bg-lightBlue: #f1f8ff;
+  --bg-white: #fff;
+  --bg-grey: #f1f8ff;
+  --bg-orange: #f39c12;
+}
+
+/* Basic Reset CSS */
+
+/* Default margin and padding are reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* To fill the page width and prevent overflow */
+html,
+body {
+  width: 100%;
+  height: 5000px;
+  background: #4e4e4e;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Default styles for list items are removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Underline is removed from links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Makes fonts consistent for form elements */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+/* Default font weight is removed for heading tags */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: normal;
+}
